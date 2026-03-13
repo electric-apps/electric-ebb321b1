@@ -1,43 +1,45 @@
-# Kyle's Stack
+# Todos
 
-A starter for building apps with TanStack Start, Radix UI, and capsize typography — with [`@tanstack/intent`](https://github.com/TanStack/intent) skills pre-installed for **Electric**, **TanStack DB**, and **Durable Streams**.
+A local-first, real-time todo application — changes sync instantly across all connected clients via Postgres → Electric → browser, with optimistic updates for a snappy feel.
 
-## Quick Start
+<!-- screenshot placeholder -->
+
+## Features
+
+- Add todos with title, priority (low/medium/high), and optional due date
+- Toggle completion with optimistic UI updates
+- Filter by All / Active / Completed
+- Overdue date warnings
+- Real-time sync across browser tabs and devices via Electric SQL
+
+## Getting Started
 
 ```bash
-npx gitpick KyleAMathews/kpb my-app
-cd my-app
 pnpm install
-pnpm dev
+pnpm dev:start
 ```
 
-## Included Skills
+Open [http://localhost:5173](http://localhost:5173).
 
-This starter comes with skills pre-installed. Just ask your coding agent:
+## Tech Stack
 
-**Electric** — Sync Postgres to your app
-- "Set up Electric sync for my Postgres database"
-- "Run the Electric security checklist"
+| Layer        | Technology                  |
+|-------------|------------------------------|
+| Sync         | Electric SQL (Postgres → client) |
+| Reactive DB  | TanStack DB (live queries + optimistic mutations) |
+| ORM          | Drizzle ORM + drizzle-zod    |
+| Framework    | TanStack Start (React SSR)   |
+| UI           | Radix UI Themes              |
+| Icons        | lucide-react                 |
 
-**TanStack DB** — Reactive client-side data
-- "Add a TanStack DB collection for the users table"
-- "Set up live queries for my todos"
+## Scripts
 
-**Durable Streams** — Real-time state sync
-- "Set up a Durable Streams dev environment"
-- "Add presence tracking to my app"
-
-**Radix + Capsize** — Typography
-- "Switch to the Playfair theme"
-- "Show me more font theme options"
-
-## What's Included
-
-- **TanStack Start** - Full-stack React framework
-- **Radix UI** - Accessible components with themes
-- **Capsize typography** - Pixel-perfect text rendering
-- **Dozens of font pairings included** - Ask the agent to set one up
-- **Biome** - Fast linting and formatting
+```bash
+pnpm dev:start     # start dev server + Postgres + Electric
+pnpm dev:stop      # stop background services
+pnpm test          # run tests
+pnpm run build     # production build
+```
 
 ## License
 

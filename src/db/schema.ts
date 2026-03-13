@@ -1,11 +1,13 @@
-import { pgTable, uuid, text, boolean, timestamp } from "drizzle-orm/pg-core"
+import { boolean, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 export const todos = pgTable("todos", {
 	id: uuid().primaryKey().defaultRandom(),
 	title: text().notNull(),
 	completed: boolean().notNull().default(false),
-	priority: text({ enum: ["low", "medium", "high"] }).notNull().default("medium"),
+	priority: text({ enum: ["low", "medium", "high"] })
+		.notNull()
+		.default("medium"),
 	due_date: timestamp({ withTimezone: true }),
 	created_at: timestamp({ withTimezone: true }).notNull().defaultNow(),
 	updated_at: timestamp({ withTimezone: true }).notNull().defaultNow(),
-})
+});

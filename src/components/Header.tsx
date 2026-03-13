@@ -8,7 +8,7 @@ export function Header() {
       <Flex align="center" justify="between" py="3" px="4">
         <Link to="/" style={{ textDecoration: 'none' }}>
           <Text size="5" weight="bold">
-            My App
+            Todos
           </Text>
         </Link>
         <Flex gap="4" align="center">
